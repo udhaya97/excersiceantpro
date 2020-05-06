@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                withAnt(ant : 'Ant')
+                withAnt(Ant :'Ant')
                 {
                   sh 'ant build'
                  
