@@ -4,7 +4,7 @@ pipeline {
         stage('Build') { 
             steps {
                def antVersion = 'Ant1.10.7'
-withEnv( ["ANT_HOME=${tool antVersion}"] ) {
+withEnv( ["ANT_HOME=${antVersion}"] ) {
     sh '$ANT_HOME/bin/ant target1 target2'
 }
                  
