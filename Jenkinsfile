@@ -1,15 +1,17 @@
 pipeline {
     agent any 
+    
+    tools {
+        ant 'Ant' 
+    }
     stages {
-        stage('Build') { 
+        stage('Build') {
             steps {
-               
-withEnv( ANT_HOME='Ant' ) {
-    sh 'ant'
-}
-                 
+                sh 'ant'
             }
         }
+    }
+    
         stage('Test') { 
             steps {
                  sh 'make check'
