@@ -4,7 +4,7 @@ pipeline {
         stage('Build') { 
             steps {
                
-withEnv( [ANT_HOME='Ant'] ) {
+withEnv( ANT_HOME='Ant' ) {
     sh '$ANT_HOME/bin/ant target1 target2'
 }
                  
