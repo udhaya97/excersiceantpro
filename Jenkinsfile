@@ -6,7 +6,7 @@ pipeline {
     }
     stages {
         stage('Build') {
-            steps { withEnv(Ant : 'Ant'){
+            steps { withEnv(ANT : 'Ant'){
                 sh 'ant'
             }
             
