@@ -5,7 +5,7 @@ pipeline {
             steps {
                
 withEnv( ANT_HOME='Ant' ) {
-    sh '$ANT_HOME/bin/ant target1 target2'
+    sh 'ant'
 }
                  
             }
