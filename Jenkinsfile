@@ -1,3 +1,4 @@
+def antVersion = 'Ant_1.10.7'
 pipeline {
     agent any 
     
@@ -6,8 +7,9 @@ pipeline {
     }
     stages {
         stage('Build') {
-            steps { withEnv(ANT_HOME : 'Ant'){
-                sh 'ant'
+            steps { withEnv( ["ANT_HOME=${tool antVersion}"] ) {
+    sh 'ant'
+}
             }
             
         }
