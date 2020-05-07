@@ -13,7 +13,7 @@ withEnv( ANT_HOME='Ant' ) {
         stage('Test') { 
             steps {
                  sh 'make check'
-                junit 'src/com/employee/test/**/*.java'
+                junit 'src/com/employee/test/**/*Test*.java'
             }
         }
         stage('Deploy') { 
