@@ -5,8 +5,8 @@ pipeline {
         stage('Build') {
             steps { env.PATH = "${tool 'ant'}\\bin;${env.PATH}"
         bat "ant ${Parameters}"
-}
-            
+
+   
         }
     }
     
