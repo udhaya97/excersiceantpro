@@ -13,13 +13,13 @@ pipeline {
     
         stage('Test') { 
             steps {
-                 sh 'make check'
+                echo '${ant}'
                 junit 'src/com/employee/test/**/*Test*.java'
             }
         }
         stage('Deploy') { 
             steps {
-                sh 'make publish'
+                echo '${ant}'
             }
         }
     }
