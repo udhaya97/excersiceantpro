@@ -1,22 +1,11 @@
 def antVersion = 'Ant_1.10.7'
-
-def callAnt(String Parameters) {
-    if (isUnix()) {
-        env.PATH = "${tool 'ant'}/bin;${env.PATH}"
-        sh "ant ${Parameters}"
-    }
-    else {
-        env.PATH = "${tool 'ant'}\\bin;${env.PATH}"
-        bat "ant ${Parameters}"
-    }
-}
-
-
 pipeline {
     agent any 
     stages {
         stage('Build') {
-            steps { callAnt("-v -p")
+            steps { withEnv( ["ANT_HOME=${tool antVersion}"] ) {
+    sh '$ANT_HOME/bin/ant main'
+}
 
    
         }
