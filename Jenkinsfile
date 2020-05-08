@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps { withEnv( ["ANT_HOME=${tool antVersion}"] ) {
-                sh 'ant -buildfile build.xml'
+                sh '$ANT_HOME/bin/ant main'
 }
             
             
