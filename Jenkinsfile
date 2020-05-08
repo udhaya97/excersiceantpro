@@ -3,8 +3,10 @@ pipeline {
     agent any 
     stages {
         stage('Build') {
-            steps { withEnv( ["ANT_HOME=${tool antVersion}"] ) {
-                sh 'ant main'
+            steps { ant {
+            target('main')
+                buildFile('build.xml')
+                
 }
             
             
