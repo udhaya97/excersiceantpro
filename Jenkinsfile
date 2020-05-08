@@ -3,8 +3,8 @@ pipeline {
     agent any 
     stages {
         stage('Build') {
-            steps { withEnv( ["ANT_HOME=${tool antVersion}"] ) {
-    bat 'ant'
+            steps { env.PATH = "${tool 'ant'}\\bin;${env.PATH}"
+        bat "ant ${Parameters}"
 }
             
         }
